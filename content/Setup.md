@@ -65,7 +65,16 @@ Yay! No more graph view.
 ### Hosting 
 In this section, we will talk about everything *free*[^1] hosting; from setting up a GitHub account along with GitHub Pages to deploying the website.    
 
-Create a new repository, give it a name, 
+Create a new repository, give it a name, and choose weather to keep it public / private. 
+
+Then execute from within the **/quartz** directory the following : 
+```bash 
+# Set your origin url (currently it'll belong to the cloned repo)
+git remote set-url origin git@github.com:jnx84/nairsnotes.git
+
+# Run the following 
+npx quartz sync --no-pull 
+```
 
 ### References 
 1. [isak's youtube tutorial](https://www.youtube.com/watch?v=zGFroBGud7w&t=322s) 
