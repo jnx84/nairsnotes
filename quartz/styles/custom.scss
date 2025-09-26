@@ -1,3 +1,38 @@
 @use "./base.scss";
+@use "./themes";
 
 // put your custom CSS here!
+/* LIGHT MODE */
+:root {
+  /* global accent variables some themes read */
+  --secondary: #b11c1c;
+  --tertiary:  #d11d1d;
+
+  /* common custom vars used across themes */
+  --color-accent: #b11c1c;
+  --color-accent-foreground: #ffffff;
+}
+
+/* DARK MODE */
+:root.dark {
+  --secondary: #ff5a5a;
+  --tertiary:  #ff7a7a;
+
+  --color-accent: #ff5a5a;
+  --color-accent-foreground: #0b0b0b;
+}
+
+/* Make sure headings and key accents flip to red */
+.page-title,
+.article-title,
+.note-title,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary) !important;
+}
+
+a { color: var(--tertiary) !important; }
+a:hover { color: var(--secondary) !important; }
+
+/* Optional: tweak rules/blockquote bars to match */
+hr { border-color: color-mix(in srgb, var(--secondary) 30%, transparent); }
+blockquote { border-left-color: var(--secondary) !important; }
